@@ -40,7 +40,9 @@ export default class HomeScreen extends React.Component {
                 cardDescription="Movement over the average, regular disturbances and low deep sleep">
             </CardSummary>
 
-            <Chip icon="warning">Warning! Your sleep quality is trending down</Chip>
+            <View style={styles.stackPush}>
+                <Chip icon="warning">Your sleep quality is trending down</Chip>
+            </View>
 
             <View style={[styles.card, styles.colorLight]}>
                 <Text style={styles.textH5}>Last Weeks Sleep Report</Text>
@@ -76,6 +78,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.neutralWhite,
     padding: Space.sizeMedium
+  },
+  stackPush: {
+    marginTop: Space.sizeLarge
   },
   textH5: {
       fontWeight: 'bold',
