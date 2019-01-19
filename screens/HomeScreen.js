@@ -116,9 +116,9 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
   },
   card: {
-      marginTop: 24,
-      padding: 24,
-      borderRadius: 12,
+      marginTop: Space.sizeLarge,
+      padding: Space.sizeLarge,
+      borderRadius: Space.sizeMedium,
   },
   textH3: {
     fontSize: 28,

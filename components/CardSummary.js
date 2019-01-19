@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import Colors from '../constants/Colors';
 import Type from '../constants/Type';
+import Space from '../constants/Space';
 
 export default class CardSummary extends Component {
     render() {
@@ -22,13 +23,13 @@ export default class CardSummary extends Component {
 }
 
 const styles = StyleSheet.create({
-  card: {
-      marginTop: 24,
-      padding: 24,
-      borderRadius: 12,
-  },
-  textH3: {
-    fontSize: 28,
-    lineHeight: 54,
-  }
+    card: {
+        marginTop: Space.sizeLarge,
+        padding: Space.sizeLarge,
+        borderRadius: Space.sizeMedium,
+    },
+    textH3: {
+      fontSize: 28,
+      lineHeight: 54,
+    }
 });
