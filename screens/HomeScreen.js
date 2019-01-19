@@ -15,9 +15,10 @@ import { WebBrowser, Icon } from 'expo';
 import PageHeader from "../components/PageHeader";
 import CardSummary from "../components/CardSummary";
 
-// My Styles
+// My StyleGuide
 import Colors from '../constants/Colors';
 import Type from '../constants/Type';
+import Space from '../constants/Space';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 16
+    padding: Space.sizeMedium
   },
   textH5: {
       fontWeight: 'bold',
