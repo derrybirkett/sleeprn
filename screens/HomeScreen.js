@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser, Icon } from 'expo';
+import { Chip } from 'react-native-paper';
 
 // My Components
 import PageHeader from "../components/PageHeader";
@@ -39,12 +40,7 @@ export default class HomeScreen extends React.Component {
                 cardDescription="Movement over the average, regular disturbances and low deep sleep">
             </CardSummary>
 
-            <View style={[styles.card, styles.panelLight]}>
-                <View style={alert}>
-                    <Icon.Ionicons style={styles.iconInline} name="md-pulse" size={24} />
-                    <Text style={styles.textP}>Your Sleep Quality is Trending Down</Text>
-                </View>
-            </View>
+            <Chip icon="warning">Warning! Your sleep quality is trending down</Chip>
 
             <View style={[styles.card, styles.colorLight]}>
                 <Text style={styles.textH5}>Last Weeks Sleep Report</Text>

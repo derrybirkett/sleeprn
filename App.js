@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 export default class App extends React.Component {
   state = {
@@ -19,10 +20,12 @@ export default class App extends React.Component {
       );
     } else {
       return (
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator />
-        </View>
+          <PaperProvider>
+            <View style={styles.container}>
+              {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+              <AppNavigator />
+            </View>
+        </PaperProvider>
       );
     }
   }
