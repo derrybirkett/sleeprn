@@ -18,8 +18,8 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-home`
-          : 'md-insert_chart'
+          ? `ios-pulse`
+          : 'md-pulse'
       }
     />
   ),
