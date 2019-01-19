@@ -1,16 +1,12 @@
 import React from 'react';
 import {
-  Image,
   Platform,
   ScrollView,
   StyleSheet,
   Text,
-  Button,
-  TouchableOpacity,
   View,
 } from 'react-native';
-import { WebBrowser, Icon } from 'expo';
-import { Chip } from 'react-native-paper';
+import { Surface, Chip } from 'react-native-paper';
 
 // My Components
 import PageHeader from "../components/PageHeader";
@@ -31,7 +27,10 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-            <PageHeader style={styles.pageHeader} />
+            <PageHeader
+                style={styles.pageHeader}
+                pageHeaderTitle="Dashboard"
+                pageHeaderDescription="Review your sleep quality." />
 
             <CardSummary
                 cardStyle={styles.panelDark}

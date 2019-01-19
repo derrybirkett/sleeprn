@@ -13,7 +13,7 @@ import Colors from '../constants/Colors';
 import Type from '../constants/Type';
 import Space from '../constants/Space';
 
-export default class CalendarScreen extends React.Component {
+export default class CreateScreen extends React.Component {
   static navigationOptions = {
     //header: null,
   };
@@ -25,8 +25,8 @@ export default class CalendarScreen extends React.Component {
 
             <PageHeader
                 style={styles.pageHeader}
-                pageHeaderTitle="Sleep Calendar."
-                pageHeaderDescription="Navigate your Sleep Journal." />
+                pageHeaderTitle="Add new sleep entry."
+                pageHeaderDescription="Add a new entry into your sleep journal." />
 
         </ScrollView>
       </View>
