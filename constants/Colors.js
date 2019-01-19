@@ -1,4 +1,4 @@
-const tintColor = '#2f95dc';
+const tintColor = '#777';
 
 //Neutrals
 const neutralWhite = '#FFF';
@@ -19,6 +19,6 @@ export default {
   errorText: '#fff',
   warningBackground: '#EAEB5E',
   warningText: '#666804',
-  noticeBackground: tintColor,
+  noticeBackground: '#2f95dc',
   noticeText: '#fff',
 };
