@@ -1,8 +1,8 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Icon } from 'expo';
-import AppNavigator from './navigation/AppNavigator';
+import { AppLoading, Asset } from 'expo';
 import { Provider as PaperProvider } from 'react-native-paper';
+import AppNavigator from './navigation/AppNavigator';
 
 export default class App extends React.Component {
   state = {

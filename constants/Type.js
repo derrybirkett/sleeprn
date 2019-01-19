@@ -1,7 +1,7 @@
 import Colors from '../constants/Colors';
 
 const textBaseSize = 12;
-const textBaseLine = 16;
+const textBaseLine = 20;
 
 export default {
   textBaseSize,

@@ -6,8 +6,8 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Surface, Chip } from 'react-native-paper';
-
+import { Surface, Chip, List, Subheading, Paragraph,Caption } from 'react-native-paper';
+import { Dropdown } from 'react-native-material-dropdown';
 // My Components
 import PageHeader from "../components/PageHeader";
 import CardSummary from "../components/CardSummary";
@@ -32,8 +32,20 @@ export default class HomeScreen extends React.Component {
                 pageHeaderTitle="Dashboard"
                 pageHeaderDescription="Review your sleep quality." />
 
+            <View style={styles.stackPush}>
+                <List.Accordion
+                  title="Last Week"
+                  description="Select a timeframe"
+                  left={props => <List.Icon {...props} icon="timer" />}
+                >
+                  <List.Item title="This Week" />
+                  <List.Item title="This Month" />
+                  <List.Item title="This Year" />
+                </List.Accordion>
+            </View>
+
             <CardSummary
-                cardStyle={styles.panelDark}
+                cardStyle={styles.panelLight}
                 cardTitle="Overall Sleep Quality"
                 cardStat="Low"
                 cardDescription="Movement over the average, regular disturbances and low deep sleep">
@@ -44,27 +56,47 @@ export default class HomeScreen extends React.Component {
             </View>
 
             <View style={[styles.card, styles.colorLight]}>
-                <Text style={styles.textH5}>Last Weeks Sleep Report</Text>
-                <Text style={styles.textP}>Movement over the average, regular disturbances and low deep sleep</Text>
+                <Subheading>Last Weeks Sleep Report</Subheading>
+                <Caption>Movement over the average, regular disturbances and low deep sleep</Caption>
             </View>
 
             <CardSummary
                 cardStyle={styles.panelLight}
-                cardTitle="Something else"
+                cardTitle="Average Sleep Duration"
                 cardStat="6.5hrs"
-                cardDescription="You sleep too little.">
+                cardDescription="15% below recommended amount.">
             </CardSummary>
 
-            <View style={[styles.card, styles.panelDark]}>
-              <Text style={[styles.textP, styles.textLight]}>Overall Sleep Quality</Text>
-              <Text style={[styles.textH3, styles.textLight]}>Low</Text>
-              <Text style={[styles.textP, styles.textLight]}>Movement over the average, regular disturbances and low deep sleep</Text>
-            </View>
+            <CardSummary
+                cardStyle={styles.panelLight}
+                cardTitle="Sleep Disturbances"
+                cardStat="Frequent"
+                cardDescription="An average of 8 disturbances from deep sleep per night.">
+            </CardSummary>
 
             <View style={[styles.card, styles.colorLight]}>
-                <Text style={styles.textH5}>Your pre-bedtime activities</Text>
-                <Text style={styles.textP}>Most pre-bedtime activies from last week were detrimental to your sleep quality.</Text>
+                <Subheading>Your pre-bedtime activities</Subheading>
+                <Paragraph>Most pre-bedtime activies from last week were detrimental to your sleep quality.</Paragraph>
             </View>
+
+            <List.Item
+                title="Using Phone/Tablet"
+                description="3 times"
+                left={props => <List.Icon {...props} icon="devices" />}
+                right={props => <List.Icon {...props} icon="thumb-down" />}
+              />
+            <List.Item
+              title="Watching TV"
+              description="3 times"
+              left={props => <List.Icon {...props} icon="tv" />}
+              right={props => <List.Icon {...props} icon="thumb-down" />}
+            />
+            <List.Item
+                title="Reading"
+                description="2 times"
+                left={props => <List.Icon {...props} icon="book" />}
+                right={props => <List.Icon {...props} icon="thumb-up" />}
+              />
 
         </ScrollView>
       </View>
@@ -79,35 +111,18 @@ const styles = StyleSheet.create({
     padding: Space.sizeMedium
   },
   stackPush: {
-    marginTop: Space.sizeLarge
-  },
-  textH5: {
-      fontWeight: 'bold',
-      fontSize: Type.textBaseSize
-  },
-  textLight: {
-      color: Type.textWhite,
+    marginTop: Space.stackPush
   },
   panelLight: {
-      backgroundColor: Colors.tintColor,
-      color: Type.textDark
+      backgroundColor: Colors.colorWhite,
+      color: Type.textDark,
+      borderStyle: 'solid',
+      borderWidth: 1,
+      borderColor: Colors.colorDark
   },
   panelDark: {
       backgroundColor: Colors.tintColor,
       color: Type.textWhite,
-  },
-  alert: {
-      flex: 1,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-  },
-  iconInline: {
-      color: Type.textDark,
-      flex: 1,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'flex-start'
   },
   textP: {
       fontSize: Type.textBaseSize,
