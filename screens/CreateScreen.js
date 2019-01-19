@@ -6,7 +6,11 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Surface, Chip } from 'react-native-paper';
+import {
+    Surface,
+    Chip,
+    TextInput
+} from 'react-native-paper';
 import PageHeader from "../components/PageHeader";
 import CardSummary from "../components/CardSummary";
 import Colors from '../constants/Colors';
