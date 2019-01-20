@@ -19,13 +19,6 @@ export default class Chart extends Component {
                     >
                         <Grid/>
                     </AreaChart>
-                    <XAxis
-                            style={{ marginHorizontal: -10 }}
-                            data={ data }
-                            contentInset={{ left: 10, right: 10 }}
-                            svg={{ fontSize: 10, fill: 'black' }}
-                        />
-
                 </View>
 
             );

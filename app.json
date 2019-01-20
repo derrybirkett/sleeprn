@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Sleep tracker React Native Test Project",
+    "githubUrl": "https://github.com/derrybirkett/sleeprn"
   }
 }

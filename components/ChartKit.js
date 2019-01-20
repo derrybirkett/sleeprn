@@ -9,7 +9,7 @@ import {
   ContributionGraph
 } from 'react-native-chart-kit'
 
-export default class ChartKit extends Component {
+export default class ChartKit extends React.Component {
     render() {
         return (
 
