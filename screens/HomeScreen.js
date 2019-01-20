@@ -12,7 +12,6 @@ import { Button, Surface, Chip, List, Subheading, Paragraph,Caption } from 'reac
 import PageHeader from "../components/PageHeader";
 import CardSummary from "../components/CardSummary";
 import SectionHeader from "../components/SectionHeader";
-//import ChartKit from "../components/ChartKit";
 import Chart from "../components/Chart";
 
 // My StyleGuide
