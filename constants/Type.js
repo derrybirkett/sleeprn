@@ -8,5 +8,15 @@ export default {
   textBaseLine,
   textDark: Colors.neutralDark,
   textWhite: Colors.neutralWhite,
-  textH3: 24
+  textH3: 24,
+  textP: {
+      fontSize: textBaseSize,
+      lineHeight: textBaseSize,
+      color: this.textDark,
+      flexDirection: 'row',
+  },
+  textH3: {
+    fontSize: 28,
+    lineHeight: 54,
+  }
 };

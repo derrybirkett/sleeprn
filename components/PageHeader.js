@@ -1,26 +1,24 @@
 import React, { Component } from "react";
 import { View, StyleSheet, Text } from "react-native";
+import { Appbar, Title, Headline, Subheading, Paragraph, Caption } from 'react-native-paper';
 
 export default class PageHeader extends Component {
   render() {
     return (
-      <View style={[this.props.style]}>
-        <Text style={styles.pageHeaderTitle}>
-          {this.props.pageHeaderTitle ? this.props.pageHeaderTitle : "Page Title"}
-        </Text>
-        <Text style={styles.pageHeaderDescription}>
-          {this.props.pageHeaderDescription ? this.props.pageHeaderDescription : "Page Description."}
-        </Text>
-      </View>
+        <Appbar.Header style={styles.appBar}>
+            <Appbar.Action icon="menu" onPress={this._onSearch} />
+            <Appbar.Content
+              title="Dashboard"
+              subtitle="View it all"
+            />
+            <Appbar.Action icon="more-vert" onPress={this._onMore} />
+        </Appbar.Header>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  pageHeaderTitle: {
-    fontSize: 24
-  },
-  pageHeaderDescription: {
-    fontSize: 16
-  }
+    appBar: {
+        backgroundColor: 'white',
+    }
 });
