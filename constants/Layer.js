@@ -15,7 +15,6 @@ export default {
       padding: Space.sizeSmall
   },
   card: {
-      marginTop: Space.sizeLarge,
       padding: Space.sizeLarge,
       borderRadius: borderRadius,
       borderStyle: 'solid',
@@ -37,9 +36,12 @@ export default {
     marginTop: Space.stackPush
   },
   sectionPush: {
-    marginTop: Space.stackPush * 2
+    marginTop: Space.sectionPush
   },
   sectionHead: {
       padding: Space.sizeMedium
+  },
+  stackLast: {
+    marginBottom: Space.stackPush * 2
   },
 };

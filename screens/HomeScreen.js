@@ -48,7 +48,6 @@ export default class HomeScreen extends React.Component {
             </View>
 
             <CardSummary
-                cardStyle={Layer.panelLight, Layer.stackPush}
                 cardTitle="Overall Sleep Quality"
                 cardStat="Low"
                 cardDescription="Movement over the average, regular disturbances and low deep sleep">
@@ -65,40 +64,37 @@ export default class HomeScreen extends React.Component {
                  sectionCaption="Movement over the average, regular disturbances and low deep sleep." />
 
             <CardSummary
-                cardStyle={Layer.panelLight}
                 cardTitle="Average Sleep Duration"
                 cardStat="6.5hrs"
                 cardDescription="15% below recommended amount.">
             </CardSummary>
 
             <CardSummary
-                cardStyle={Layer.panelLight}
                 cardTitle="Sleep Disturbances"
                 cardStat="Frequent"
                 cardDescription="An average of 8 disturbances from deep sleep per night.">
             </CardSummary>
-
 
             <SectionHeader
                 sectionHeader="Your pre-bedtime activities."
                 sectionCaption="Most pre-bedtime activies from last week were detrimental to your sleep quality." />
 
             <List.Item
-                style={Layer.outline, Layer.stackPush}
+                style={[Layer.outline, Layer.stackPush]}
                 title="Using Phone/Tablet"
                 description="3 times"
                 left={props => <List.Icon {...props} icon="devices" />}
                 right={props => <List.Icon {...props} icon="thumb-down" />}
               />
             <List.Item
-                style={Layer.outline, Layer.stackPush}
+                style={[Layer.outline, Layer.stackPush]}
               title="Watching TV"
               description="3 times"
               left={props => <List.Icon {...props} icon="tv" />}
               right={props => <List.Icon {...props} icon="thumb-down" />}
             />
             <List.Item
-                style={Layer.outline, Layer.stackPush}
+                style={[Layer.outline, Layer.stackPush, Layer.stackLast]}
                 title="Reading"
                 description="2 times"
                 left={props => <List.Icon {...props} icon="book" />}

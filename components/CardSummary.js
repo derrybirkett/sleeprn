@@ -9,7 +9,7 @@ import Layer from '../constants/Layer';
 export default class CardSummary extends Component {
     render() {
             return (
-                <View style={[Layer.card]}>
+                <View style={[Layer.card, Layer.stackPush]}>
                     <Subheading>
                       {this.props.cardTitle ? this.props.cardTitle : "cardTitle"}
                     </Subheading>
