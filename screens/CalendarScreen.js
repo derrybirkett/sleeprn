@@ -6,38 +6,29 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Surface, Chip } from 'react-native-paper';
+import { Paragraph } from 'react-native-paper';
+import Layout from '../constants/Layout';
 import PageHeader from "../components/PageHeader";
-import CardSummary from "../components/CardSummary";
-import Colors from '../constants/Colors';
-import Type from '../constants/Type';
-import Space from '../constants/Space';
 
 export default class CalendarScreen extends React.Component {
   static navigationOptions = {
-    //header: null,
+    header: null,
   };
 
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <View style={{flex:1}}>
 
             <PageHeader
-                style={styles.pageHeader}
-                pageHeaderTitle="Sleep Calendar."
-                pageHeaderDescription="Navigate your Sleep Journal." />
+                pageHeaderTitle="Calendar"
+                pageHeaderDescription="Select a sleep journal range." />
 
-        </ScrollView>
-      </View>
+            <ScrollView style={Layout.container} contentContainerStyle={Layout.contentContainer}>
+                <View>
+                    <Paragraph>To do: browse by dates.</Paragraph>
+                </View>
+          </ScrollView>
+        </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.neutralWhite,
-    padding: Space.sizeMedium
-  }
-});
