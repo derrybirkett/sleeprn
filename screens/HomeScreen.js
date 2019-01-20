@@ -13,6 +13,7 @@ import PageHeader from "../components/PageHeader";
 import CardSummary from "../components/CardSummary";
 import SectionHeader from "../components/SectionHeader";
 //import Chart from "../components/Chart";
+import ChartKit from "../components/ChartKit";
 
 // My StyleGuide
 import Layout from '../constants/Layout';
@@ -35,6 +36,8 @@ export default class HomeScreen extends React.Component {
               pageHeaderDescription="Review your sleep quality." />
 
         <ScrollView style={Layout.container} contentContainerStyle={Layout.contentContainer}>
+
+            <ChartKit />
 
             <View style={Layer.stackPush, Layer.outline}>
                 <List.Accordion
