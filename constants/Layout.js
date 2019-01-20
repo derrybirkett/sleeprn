@@ -2,7 +2,6 @@ import { Dimensions } from 'react-native';
 import Colors from '../constants/Colors';
 import Space from '../constants/Space';
 
-
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
@@ -17,4 +16,7 @@ export default {
     backgroundColor: Colors.neutralWhite,
     padding: Space.sizeMedium,
   },
+  displayInline: {
+      flex: 1, flexDirection: 'row'
+  }
 };

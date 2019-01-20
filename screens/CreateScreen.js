@@ -1,20 +1,8 @@
 import React from 'react';
-import {
-  Platform,
-  ScrollView,
-  Layoutheet,
-  Text,
-  View,
-} from 'react-native';
-import {
-    Surface,
-    Chip,
-    TextInput,
-    Button,
-    IconButton,
-    HelperText
-} from 'react-native-paper';
+import { Platform,ScrollView,Text,View} from 'react-native';
+import { Surface,Chip,TextInput,Button,IconButton,Paragraph,HelperText, Portal, Dialog } from 'react-native-paper';
 import { Icon } from 'react-native-vector-icons';
+import DateTimePicker from 'react-native-modal-datetime-picker';
 import PageHeader from "../components/PageHeader";
 import CardSummary from "../components/CardSummary";
 import Layout from '../constants/Layout';
@@ -28,6 +16,22 @@ export default class CreateScreen extends React.Component {
     header: null,
   };
 
+  state = {
+    isDateTimePickerVisible: false,
+    dialogVisible: false,
+  };
+
+  _showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
+  _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
+  _handleDatePicked = (date) => {
+    console.log('A date has been picked: ', date);
+    this._hideDateTimePicker();
+  };
+
+  _showDialog = () => this.setState({ dialogVisible: true });
+  _hideDialog = () => this.setState({ dialogVisible: false });
+
+
   render() {
     return (
         <View style={{flex:1}}>
@@ -38,47 +42,43 @@ export default class CreateScreen extends React.Component {
 
             <ScrollView style={Layout.container} contentContainerStyle={Layout.contentContainer}>
 
-                <View style={Layer.stackPush}>
+                <View>
+                    <Paragraph>Log a new sleep event into your journal.</Paragraph>
+                </View>
+
+                <View style={[Layer.stackPush]}>
                     <TextInput
+                            id="DateField"
                             label='Date'
                             value="Wed 14th December"
                             mode="outlined"
+                            onFocus={this._showDateTimePicker}
                           />
                     <HelperText
                         type="info">
                         Set to Today
                     </HelperText>
-                    <IconButton
-                      icon="add-a-photo"
-                      color={Colors.red500}
-                      size={20}
-                      onPress={() => console.log('Pressed')}
+                      <DateTimePicker
+                        isVisible={this.state.isDateTimePickerVisible}
+                        onConfirm={this._handleDatePicked}
+                        onCancel={this._hideDateTimePicker}
                       />
                 </View>
 
-                <View style={Layer.stackPush}>
+                <View style={[Layer.stackPush, {flex: 1,flexDirection: 'row',justifyContent: 'space-between'}]}>
                        <TextInput
-                               label='Start'
-                               value="12:00"
-                               mode="outlined"
-                             />
-                         <HelperText
-                             type="info">
-                             What time did you go to bed?
-                         </HelperText>
+                            style={{flexGrow: 50, marginRight: Space.sizeSmall}}
+                            label='Start'
+                            value="12:00"
+                            mode="outlined"
+                         />
+                         <TextInput
+                            style={{flexGrow: 50}}
+                            label='End'
+                            value="06:00"
+                            mode="outlined"
+                                 />
                 </View>
-
-                <View style={Layer.stackPush}>
-                    <TextInput
-                              label='End'
-                              value="06:00"
-                              mode="outlined"
-                            />
-                    <HelperText
-                        type="info">
-                        What time did you go to Wakeup?
-                    </HelperText>
-                 </View>
 
                  <View style={Layer.stackPush}>
                      <TextInput
@@ -109,14 +109,18 @@ export default class CreateScreen extends React.Component {
                            label='Pre-bedtime Activity'
                            value="(Other) Put Kids to Bed"
                            mode="outlined"
+                           editable = {false}
+                           onFocus={this._showDialog}
                          />
                      <HelperText
                          type="info">
                          What did you do before going to bed?
                      </HelperText>
+
+                     
               </View>
 
-              <View style={Layer.stackPush}>
+              <View style={[Layer.stackPush, Layer.stackLast]}>
                   <Button icon="done" mode="contained" onPress={() => console.log('Pressed')}>
                       Ok, Save
                   </Button>
