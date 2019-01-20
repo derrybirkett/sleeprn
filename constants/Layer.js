@@ -18,6 +18,9 @@ export default {
       marginTop: Space.sizeLarge,
       padding: Space.sizeLarge,
       borderRadius: borderRadius,
+      borderStyle: 'solid',
+      borderWidth: 1,
+      borderColor: Colors.neutralLight
   },
   panelLight: {
       backgroundColor: Colors.colorWhite,
@@ -36,7 +39,7 @@ export default {
   sectionPush: {
     marginTop: Space.stackPush * 2
   },
-  sectionHeader: {
+  sectionHead: {
       padding: Space.sizeMedium
   },
 };

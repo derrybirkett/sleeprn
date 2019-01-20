@@ -1,6 +1,5 @@
 // Primaries
-const primaryDefault = '#6200ee';
-const tintColor = '#6200ee';
+const tintColor = '#8936FF';
 
 //Neutrals
 const neutralWhite = '#FFF';
@@ -10,7 +9,6 @@ const neutralDark = '#333';
 
 export default {
   tintColor,
-  primaryDefault,
   neutralLight,
   neutralLight,
   neutralDefault,

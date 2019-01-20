@@ -8,8 +8,8 @@ export default class PageHeader extends Component {
         <Appbar.Header style={styles.appBar}>
             <Appbar.Action icon="menu" onPress={this._onSearch} />
             <Appbar.Content
-              title="Dashboard"
-              subtitle="View it all"
+              title={this.props.pageHeaderTitle ? this.props.pageHeaderTitle : "Title"}
+              subtitle={this.props.pageHeaderDescription ? this.props.pageHeaderDescription : "Description"}
             />
             <Appbar.Action icon="more-vert" onPress={this._onMore} />
         </Appbar.Header>

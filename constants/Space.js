@@ -6,6 +6,6 @@ export default {
   sizeSmall: sizeBase,
   sizeMedium: sizeBase * 2,
   sizeLarge: sizeBase * 3,
-  stackPush: sizeBase * 2,
+  stackPush: this.sizeMedium,
   sectionPush: this.stackPush * 2,
 };
